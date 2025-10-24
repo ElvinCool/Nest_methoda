@@ -75,7 +75,7 @@ NestJS использует **Node-пакеты**, поэтому для раб
 
 > По умолчанию сервер запускается на [**http://localhost:3000**](http://localhost:3000/)
 > 
-![Первый запуск](assets/nest.png)
+![Первый запуск](assets/localhost.png)
 
 # **Как работать с Controller и Module**
 
@@ -130,7 +130,7 @@ export class BmstuLabModule {}
 ```
 
 Теперь у нас доступна страница по адресу [`http://localhost:3000/bmstu-hello`](http://localhost:3000/bmstu-hello) вы должны увидеть
-![Готовая страница](assets/nest.png)
+![Готовая страница](assets/bmstu_hello.png)
 
 Таким образом, код **hello** bmstu students будет вызван при обращении к серверу по **/bmstu-hello**
 
@@ -253,7 +253,7 @@ export class BmstuLabController {
 
 После запуска сервера по пути `http://localhost:3000/bmstu-hello/` вы должны увидеть
 
-![Главная страница](assets/main_web.png)
+![Главная страница](assets/bmstu_hello_lab.png)
 
 ## **Циклы и условия**
 
@@ -302,7 +302,7 @@ export class BmstuLabController {
 
 Теперь Handlebars сгенерирует список, где каждое значение будет отображаться по условию. После запуска сервера по пути `http://localhost:3000/bmstu-hello/` вы должны увидеть
 
-![Список](assets/main_web.png)
+![Список](assets/bmstu_list.png)
 
 # Наследование шаблонов в Handlebars (NestJS)
 
