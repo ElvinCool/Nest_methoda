@@ -743,7 +743,7 @@ export class BmstuLabService {
 Теперь, когда у нас есть сервис, получающий данные из базы,
 создадим контроллер, который будет обрабатывать HTTP-запросы и отображать эти данные в виде HTML-страниц.
 
-****Пример реализации `bmstu_lab.controller.ts`
+Пример реализации `bmstu_lab.controller.ts`
 
 ```tsx
 import { Controller, Get, Post, Body, Param, Render } from '@nestjs/common';
