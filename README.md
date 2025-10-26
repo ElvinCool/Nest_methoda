@@ -551,7 +551,7 @@ NestJS поддерживает различные ORM. Мы будем испо
 
 `npm install --save @nestjs/sequelize sequelize sequelize-typescript pg pg-hstore`
 
-![Установка зависимостей](assets/sequalize_install.png.png)
+![Установка зависимостей](assets/sequalize_install.png)
 
 ## Настройка подключения к PostgreSQL
 
@@ -700,7 +700,7 @@ export class Order extends Model<Order, OrderAttrs> {
 
 `SELECT * FROM orders;`
 
-![Создание таблицы orders](assets/creating_table.png.png)
+![Создание таблицы orders](assets/creating_table.png)
 
 Посредством команды INSERT INTO вставим данные в существующую таблицу
 должно получится так
@@ -718,7 +718,7 @@ VALUES ('Название товара', 5000);`
 
 Добавим следующий код в файл `bmstu_lab.service.ts` 
 
-```
+```tsx
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Order } from './orders.model';
@@ -745,7 +745,7 @@ export class BmstuLabService {
 
 ****Пример реализации `bmstu_lab.controller.ts`
 
-```
+```tsx
 import { Controller, Get, Post, Body, Param, Render } from '@nestjs/common';
 import { BmstuLabService } from './bmstu_lab.service';
 
