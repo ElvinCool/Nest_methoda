@@ -1,6 +1,6 @@
 # Методические указания №1 NestJS (TS, Nest, Handlebars, Sequelize, куки)
 
-Для выполнения лабораторной работы потребуется установленный [**Node.js (LTS)**](https://nodejs.org/en/download), пакетный менеджер **npm** (или **yarn**) и редактор кода [**Visual Studio Code](https://code.visualstudio.com/)** 
+Для выполнения лабораторной работы потребуется установленный [**Node.js (LTS)**](https://nodejs.org/en/download), пакетный менеджер **npm** (или **yarn**) и редактор кода [**Visual Studio Code**](https://code.visualstudio.com/)** 
 
 # **Создание проекта локально**
 
