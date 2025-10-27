@@ -579,7 +579,6 @@ import { BmstuLabModule } from './bmstu_lab/bmstu_lab.module';
     password: 'sql123',
     database: 'orders',
     autoLoadModels: true, //автоматически подключает все модели, найденные в проекте
-    synchronize: true, //создаёт таблицы при запуске
     models: [], //cписок моделей, которые NestJS должен зарегистрировать
   }),
   BmstuLabModule],
@@ -641,7 +640,6 @@ import { ConfigModule } from '@nestjs/config';
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.POSTGRES_DB,
     autoLoadModels: true,
-    synchronize: true, 
     models: [],
   }),
   BmstuLabModule],
