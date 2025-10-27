@@ -597,7 +597,7 @@ npm install --save @nestjs/config
 
 Теперь добавим модуль в список импортов в `app.module.ts`:
 
-```
+```tsx
 import { ConfigModule } from '@nestjs/config';
 
 ...
