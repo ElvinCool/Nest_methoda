@@ -558,10 +558,9 @@ body {
 Добавим в Handlebars-шаблон простую HTML-форму:
 
 ```html
-<h2>Введите сообщение:</h2>
-<form action="/bmstu-hello/sendText" method="post">
-    <input type="text" name="text" placeholder="Ваш текст">
-    <button type="submit">Отправить</button>
+<form action="/orders" method="POST">
+      <input type="text" name="query" placeholder="Введите запрос" value="{{data.query}}">
+      <button type="submit">Найти</button>
 </form>
 ```
 
@@ -570,17 +569,39 @@ body {
 `src/bmstu_lab/bmstu_lab.controller.ts`
 
 ```tsx
-  @Post('sendText')
-  @Render('response')
-  handleForm(@Body() body: { text: string }) {
-    const userText = body.text || '— пусто —';
-    return { message: `Вы ввели: ${userText}` };
+   @Post()
+   @Render('main')
+   async searchOrders(@Body() body: { query?: string }) {
+    // Извлекаем поисковый запрос из тела POST-запроса
+    const query = body?.query || '';
+    let orders: Order[];
+    
+    // Если запрос не пустой, выполняем поиск по названию заказа
+    if (query && query.trim()) {
+      // Фильтруем заказы по названию (регистронезависимый поиск)
+      const searchQuery = query.toLowerCase();
+      orders = this.orders.filter(order => 
+        order.title.toLowerCase().includes(searchQuery)
+      );
+    } else {
+      // Если запрос пустой, возвращаем все заказы
+      orders = this.orders;
+    }
+    
+    return {
+      title: 'Список заказов',
+      name: 'BMSTU',
+      data: {
+        current_date: new Date().toLocaleDateString(),
+        orders: orders,
+        query: query || '', // Сохраняем запрос для отображения в поле ввода
+      },
+    };
   }
 ```
 
-После отправки формы в текстовое поле увидим переход на страницу с тем что ввели на главной странице 
-
-![Отправка Формы](assets/result_form.png)
+После отправки формы в текстовое поле и нажатии кнопки найти можно увидеть отображение товара, который ввели, или его отсутсвтие на главной странице 
+![PostSearch](assets/search.gif)
 
 ## FAQ
 
