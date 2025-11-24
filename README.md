@@ -498,7 +498,9 @@ export class BmstuLabController {
 ![Итоговая структура проекта](assets/views_struct.png)
 
 # **5. Подключение статических файлов в NestJS (CSS, изображения, JS)**
+Что такое статические файлы?
 
+Статические это те которые отдаются в неизменном виде, которые серверу не нужно обрабатывать. Например JS, CSS, jpg, png, html, txt и т. д. Динамические файлы это те которые сервер обрабатывает: php, pl, cgi и т.д.
 Чтобы NestJS “видел” и отдавал статические ресурсы (например, style.css), нужно в `main.ts` добавить строку для регистрации папки со статикой:
 
 ```tsx
@@ -527,6 +529,29 @@ body {
     color: #333;
   }
 ```
+Создадим там папку img и поместим туда какую-либо картинку. В нашем примере - logo.png . Добавим код, чтобы получить статику в шапке сайта в файле header.hbs:
+
+```html
+<header>
+  <div class="header-content">
+    <a href="/orders" class="logo-link">
+      <img src="/logo.png" alt="BMSTU Logo" class="header-logo">
+    </a>
+    <h1>BMSTU Application</h1>
+  </div>
+  <hr>
+</header>
+```
+Добавим стили для картинки в файле /public/style.css
+```css
+  .header-logo {
+    height: 120px;
+    width: auto;
+    cursor: pointer;
+  }
+```
+Запускаем сервер и видим, что наша статика успешно загружена:
+![](assets/static.gif)
 
 # **6. Получение данных из формы (Input, POST-запрос)**
 
